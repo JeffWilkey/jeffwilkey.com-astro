@@ -1,0 +1,92 @@
+---
+import config from "@/config";
+---
+
+<header>
+  <div class="header-left">
+    <img class="hello-img" src="profile-square.jpg" alt="Profile picture" />
+  </div>
+  <div class="header-right">
+    <h1 class="hello">
+      Hello, I'm <span>{config.authorFirstName} {config.authorLastName}</span>
+    </h1>
+    <p class="hello-body">
+      I am a Software Engineer currently based<br /> in Southern California.
+    </p>
+    <div class="hello-social">
+      <a href={config.githubUrl}>
+        <i class="fa fa-brands fa-github-alt"></i>
+      </a>
+      <a href={config.codepenUrl}>
+        <i class="fa fa-brands fa-codepen"></i>
+      </a>
+      <a href={config.linkedinUrl}>
+        <i class="fa fa-brands fa-linkedin"></i>
+      </a>
+    </div>
+  </div>
+</header>
+
+<style>
+  header {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+  .header-left {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .header-right {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 4px solid var(--color-accent);
+  }
+  .hello {
+    font-size: var(--text-2xl);
+    font-weight: 400;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .hello span {
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+
+  .hello-body {
+    font-size: var(--text-lg);
+    font-weight: 400;
+    color: var(--color-text);
+  }
+
+  .hello-img {
+    width: 100%;
+    border-radius: 1rem;
+    max-width: 320px;
+  }
+
+  .hello-social a {
+    font-size: var(--text-lg);
+    transition: var(--theme-transition);
+    margin: 0 0.5rem;
+  }
+
+  .hello-social a:first-child {
+    margin-left: 0;
+  }
+  @media screen and (min-width: 768px) {
+    header {
+      flex-direction: row;
+    }
+
+    .header-left {
+      justify-content: left;
+    }
+  }
+</style>

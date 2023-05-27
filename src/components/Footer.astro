@@ -1,0 +1,13 @@
+---
+import config from "@/config";
+const currentYear = new Date().getFullYear();
+---
+
+<p>&copy; {currentYear} {config.authorFirstName} {config.authorLastName}</p>
+
+<style>
+  p {
+    color: white;
+    text-align: center;
+  }
+</style>

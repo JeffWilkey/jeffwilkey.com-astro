@@ -1,0 +1,43 @@
+---
+import config from "@/config";
+---
+
+<nav>
+  <a class="nav-logo" href="/">{config.brandText}</a>
+  <ul class="nav-links">
+    <li><a href="/projects">Projects</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-logo {
+    font-size: var(--text-3xl);
+    font-family: var(--font-brand);
+    font-weight: 700;
+    transition: var(--theme-transition);
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+  }
+
+  .nav-links li a {
+    transition: var(--theme-transition);
+    margin: 0 1rem;
+  }
+
+  .nav-links li a:hover {
+    font-size: var(--text-md);
+  }
+</style>
