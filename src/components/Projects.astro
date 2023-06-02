@@ -1,0 +1,104 @@
+---
+const allProjects = await Astro.glob("../pages/projects/*.md");
+const sortedProfessionalProjects = sortProjectsByType("professional");
+const sortedPersonalProjects = sortProjectsByType("personal");
+
+const buildProjectRows = (sortedProjects: any[]): any[] => {
+  {
+    const rows = [];
+    for (let i = 0; i < Math.ceil(allProjects.length / 3); i++) {
+      rows.push(sortedProjects.slice(i * 3, i * 3 + 3));
+    }
+    return rows;
+  }
+};
+
+function sortProjectsByType(type: string): any[] {
+  return allProjects
+    .filter((project) => project.frontmatter.type === type)
+    .sort((a, b) => a.frontmatter.position - b.frontmatter.position);
+}
+---
+
+<h2>Professional</h2>
+{
+  buildProjectRows(sortedProfessionalProjects).map((projectRow) => (
+    <ul class="projects">
+      {projectRow.map((project: any) => (
+        <li class="project">
+          <a class="project-thumbnail" href={project.url}>
+            <img
+              src={project.frontmatter.image.src}
+              alt={project.frontmatter.image.alt}
+            />
+          </a>
+          <a class="project-link" href={project.url}>
+            {project.frontmatter.title}
+          </a>
+          <br />
+          <i>{project.frontmatter.tagline}</i>
+        </li>
+      ))}
+    </ul>
+  ))
+}
+
+<h2>Personal</h2>
+{
+  buildProjectRows(sortedPersonalProjects).map((projectRow) => (
+    <ul class="projects">
+      {projectRow.map((project: any) => (
+        <li class="project">
+          <a class="project-thumbnail" href={project.url}>
+            <img
+              src={project.frontmatter.image.src}
+              alt={project.frontmatter.image.alt}
+            />
+          </a>
+          <a class="project-link" href={project.url}>
+            {project.frontmatter.title}
+          </a>
+          <br />
+          <i>{project.frontmatter.tagline}</i>
+        </li>
+      ))}
+    </ul>
+  ))
+}
+
+<style>
+  .projects {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+  }
+  .project {
+    flex: 1;
+    margin: 0.5rem;
+  }
+  .project-link {
+    font-weight: 700;
+    font-size: var(--text-md);
+  }
+  .project .project-thumbnail img:hover {
+    transform: translateY(-0.25rem);
+  }
+  .project .project-thumbnail img {
+    transition: var(--theme-transition);
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .projects {
+      flex-direction: row;
+    }
+    .project {
+      margin: 0 0.5rem;
+    }
+  }
+</style>

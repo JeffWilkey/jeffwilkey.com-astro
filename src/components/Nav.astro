@@ -1,5 +1,9 @@
 ---
 import config from "@/config";
+
+interface NavProps {
+  currentPage: string;
+}
 ---
 
 <nav>
@@ -15,7 +19,7 @@ import config from "@/config";
 <style>
   nav {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
   }
 
@@ -23,17 +27,17 @@ import config from "@/config";
     font-size: var(--text-3xl);
     font-family: var(--font-brand);
     font-weight: 700;
-    transition: var(--theme-transition);
+    margin: 1rem 0;
   }
 
   .nav-links {
     display: flex;
     list-style: none;
     margin: 0;
+    padding: 0;
   }
 
   .nav-links li a {
-    transition: var(--theme-transition);
     margin: 0 1rem;
   }
 

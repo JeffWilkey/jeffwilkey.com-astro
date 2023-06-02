@@ -14,13 +14,13 @@ import config from "@/config";
       I am a Software Engineer currently based<br /> in Southern California.
     </p>
     <div class="hello-social">
-      <a href={config.githubUrl}>
+      <a href={config.githubUrl} target="_blank">
         <i class="fa fa-brands fa-github-alt"></i>
       </a>
-      <a href={config.codepenUrl}>
+      <a href={config.codepenUrl} target="_blank">
         <i class="fa fa-brands fa-codepen"></i>
       </a>
-      <a href={config.linkedinUrl}>
+      <a href={config.linkedinUrl} target="_blank">
         <i class="fa fa-brands fa-linkedin"></i>
       </a>
     </div>
@@ -67,14 +67,17 @@ import config from "@/config";
 
   .hello-img {
     width: 100%;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     max-width: 320px;
   }
 
   .hello-social a {
     font-size: var(--text-lg);
-    transition: var(--theme-transition);
     margin: 0 0.5rem;
+  }
+
+  .hello-social a:hover {
+    font-size: var(--text-xl);
   }
 
   .hello-social a:first-child {

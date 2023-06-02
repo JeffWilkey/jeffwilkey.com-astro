@@ -1,0 +1,80 @@
+---
+const allProjects = await Astro.glob("../pages/projects/*.md");
+---
+
+<div class="projects-header">
+  <h1>Recent Projects</h1>
+  <a href="/projects">View All {"->"}</a>
+</div>
+
+<ul class="projects">
+  {
+    allProjects
+      .filter((project) => project.frontmatter.featured)
+      .sort(
+        (a, b) =>
+          (new Date(b.frontmatter.date) as any) -
+          (new Date(a.frontmatter.date) as any)
+      )
+      .map((project) => (
+        <li class="project">
+          <a class="project-thumbnail" href={project.url}>
+            <img
+              src={project.frontmatter.image.src}
+              alt={project.frontmatter.image.alt}
+            />
+          </a>
+          <a class="project-link" href={project.url}>
+            {project.frontmatter.title}
+          </a>
+          <br />
+          <i>{project.frontmatter.tagline}</i>
+        </li>
+      ))
+  }
+</ul>
+
+<style>
+  .projects-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .projects {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+  }
+  .project {
+    flex: 1;
+    margin: 0.5rem;
+  }
+  .project-link {
+    font-weight: 700;
+    font-size: var(--text-md);
+  }
+  .project .project-thumbnail img:hover {
+    transform: translateY(-0.25rem);
+  }
+  .project .project-thumbnail img {
+    transition: var(--theme-transition);
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .projects-header {
+      margin-top: 2rem;
+    }
+    .projects {
+      flex-direction: row;
+    }
+    .project {
+      margin: 0 0.5rem;
+    }
+  }
+</style>

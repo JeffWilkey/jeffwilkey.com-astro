@@ -1,0 +1,28 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={frontmatter.title} description={frontmatter.title}>
+  <h1 class="post-title">{frontmatter.title}</h1>
+  <img
+    class="post-img"
+    src={frontmatter.image.src}
+    alt={frontmatter.image.alt}
+  />
+  <h2>{frontmatter.tagline}</h2>
+  <slot />
+</BaseLayout>
+
+<style>
+  .post-img {
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+  }
+  .post-title {
+    font-size: var(text-3xl);
+    margin-bottom: 2rem;
+    border-right: 4px solid var(--color-accent);
+  }
+</style>
