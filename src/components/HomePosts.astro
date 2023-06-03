@@ -1,0 +1,48 @@
+---
+const allPosts = await Astro.glob("../pages/posts/*.md");
+---
+
+<div class="posts-header">
+  <h1>Writings</h1>
+  <a href="/posts">View All {"->"}</a>
+</div>
+
+<ul class="posts">
+  {
+    allPosts
+      .slice(0, 5)
+      .sort(
+        (a, b) =>
+          (new Date(b.frontmatter.date) as any) -
+          (new Date(a.frontmatter.date) as any)
+      )
+      .map((post) => (
+        <l class="post">
+          <a href={post.url}>
+            <h2>{post.frontmatter.title}</h2>
+            <p>{post.frontmatter.description}</p>
+            {post.frontmatter.tags?.map((tag: string) => (
+              <span class={`post-tag ${tag}`}>{tag}</span>
+            ))}
+          </a>
+        </l>
+      ))
+  }
+</ul>
+
+<style>
+  .posts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .posts {
+    padding: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    .posts-header {
+      margin-top: 2rem;
+    }
+  }
+</style>
