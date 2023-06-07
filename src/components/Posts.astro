@@ -3,11 +3,6 @@ import { format } from "date-fns";
 const allPosts = await Astro.glob("../pages/posts/*.md");
 ---
 
-<div class="posts-header">
-  <h1>Writings</h1>
-  <a href="/blog">View All {"->"}</a>
-</div>
-
 <ul class="posts">
   {
     allPosts

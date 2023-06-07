@@ -58,6 +58,9 @@ const allProjects = await Astro.glob("../pages/projects/*.md");
   }
   .project .project-thumbnail img:hover {
     transform: translateY(-0.25rem);
+    -webkit-box-shadow: 10px 10px 20px -13px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 20px -13px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 20px -13px rgba(0, 0, 0, 0.75);
   }
   .project .project-thumbnail img {
     transition: var(--theme-transition);

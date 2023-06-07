@@ -7,19 +7,19 @@ image: { src: "/assets/images/image-post.jpeg", alt: "Image post" }
 tags: ["hello world"]
 ---
 
-## Who am I?
+<img style="display: block; border-radius: 0.5rem; margin: 0 auto;" src="./whats-up/jeff-my-name-is-jeff.gif" alt="My name is Jeff"/>
 
 This is my first post. I spent the last few weeks working on this new portfolio site since it's been a few years since I updated my last one.
 
 I'm Jeff, currently working as a **Senior Backend Developer** at **MANSCAPED**.
 
-Been coding for about 8 years, starting out in `Ruby` on Rails and then moved more into the **JS**/**TS** world. My title at work is something I'm proud of by doesn't really define me as a dev I feel like. I have a passion for all of these things really and I built this blog to write about all of my interests in the dev world.
+Been coding for about 8 years, starting out in Ruby on Rails and then moved more into the **JS**/**TS** world. My title at work is something I'm proud of by doesn't really define me as a dev I feel like. I have a passion for all of these things really and I built this blog to write about all of my interests in the dev world.
 
 ## Why the blog?
 
 Well I wanted to update my portfolio mostly but I also wanted to start documenting some things that I've been working on, learning as well as writing articles to either help others out or get excited about working on stuff again.. Whether your new or experienced, I hope you find something useful or at least entertaining here.
 
-## Burnout is fucking real
+## Burnout is real
 
 But I've found that spending more time outside of work on things that interest me that I may not get to work with on a day to day basis has had a positive effect where I don't feel so stuck or tired. So this is also just a place where we can talk about that stuff.
 
