@@ -7,7 +7,7 @@ image: { src: "/assets/images/image-post.jpeg", alt: "Image post" }
 tags: ["hello world"]
 ---
 
-<img style="display: block; border-radius: 0.5rem; margin: 0 auto;" src="posts/jeff-my-name-is-jeff.gif" alt="My name is Jeff"/>
+<img style="display: block; border-radius: 0.5rem; margin: 0 auto;" src="jeff-my-name-is-jeff.gif" alt="My name is Jeff"/>
 
 This is my first post. I spent the last few weeks working on this new portfolio site since it's been a few years since I updated my last one.
 
