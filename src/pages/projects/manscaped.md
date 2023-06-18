@@ -5,7 +5,7 @@ date: 2023-05-27 11:59:00 -08:00
 image: { src: "/projects/manscaped.png", alt: "MANSCAPED" }
 urls: { live: "https://manscaped.com", repo: null }
 featured: true
-tagline: "Spherical D2C eCommerce"
+tagline: "Full Stack D2C eCommerce"
 type: "professional"
 position: 1
 ---
