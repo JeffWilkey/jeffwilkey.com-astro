@@ -1,14 +1,14 @@
 ---
-import HomeHeader from "@/components/HomeHeader.astro";
-import HomePosts from "@/components/HomePosts.astro";
-import HomeProjects from "@/components/HomeProjects.astro";
+import Header from "@/components/Home/Header.astro";
+import Posts from "@/components/Home/Posts.astro";
+import Projects from "@/components/Home/Projects.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Home">
   <main>
-    <HomeHeader />
-    <HomeProjects />
-    <HomePosts />
+    <Header />
+    <Projects />
+    <Posts />
   </main>
 </BaseLayout>
