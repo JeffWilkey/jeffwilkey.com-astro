@@ -1,12 +1,12 @@
 ---
 import { format } from "date-fns";
-const allPosts = await Astro.glob("../pages/posts/*.md");
+const allPosts = await Astro.glob("../pages/posts/**/*.md");
 ---
 
 <ul class="posts">
   {
     allPosts
-      .filter((post) => !post.frontmatter.hidden)
+      .filter((post) => post.frontmatter.published)
       .slice(0, 5)
       .sort(
         (a, b) =>

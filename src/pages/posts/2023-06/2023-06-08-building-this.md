@@ -5,6 +5,7 @@ description: Thoughts on Astro and other ramblings about this project
 date: 2023-06-02T00:00:00Z
 image: { src: "/assets/images/image-post.jpeg", alt: "Image post" }
 tags: ["astro", "typescript", "html", "css"]
+published: false
 ---
 
 ## Astro

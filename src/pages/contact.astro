@@ -3,5 +3,64 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Contact" description="Contact me">
-  <h1>Contact</h1>
+  <h1>Contact me</h1>
+  <form
+    class="contact-form"
+    action="https://formspree.io/f/mqkovjqq"
+    method="POST"
+  >
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" />
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" />
+    <label for="message">Message</label>
+    <textarea name="message" id="message" rows="5"></textarea>
+    <button type="submit">Send</button>
+  </form>
+
+  <style>
+    .contact-form {
+    }
+    .contact-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: var(--text-md);
+    }
+    .contact-form input,
+    .contact-form textarea {
+      display: block;
+      width: 100%;
+      background: none;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border: none;
+      border-bottom: 2px solid var(--color-primary-light);
+      font-size: var(--text-md);
+      color: var(--color-text);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-bottom: solid 4px var(--color-primary-lightest);
+    }
+
+    .contact-form button {
+      display: block;
+      background: none;
+      color: var(--color-text);
+      margin: 1rem 0 0 auto;
+      border: solid 2px var(--color-accent);
+      border-radius: 0.25rem;
+      padding: 0.5rem 1.5rem;
+      font-size: var(--text-md);
+      cursor: pointer;
+      transition: all 0.1s ease-in-out;
+    }
+
+    .contact-form button:hover {
+      background: var(--color-accent);
+    }
+  </style>
 </BaseLayout>

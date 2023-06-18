@@ -5,7 +5,7 @@ description: Lorem ipsum dolor sit amet consectetur adipisicing elit.
 date: 2020-02-06T00:00:00Z
 image: { src: "/assets/images/image-post.jpeg", alt: "Image post" }
 tags: ["html", "css", "javascript", "astro", "typescript"]
-hidden: true
+published: false
 ---
 
 This is a paragraph. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vero esse non molestias eos excepturi, inventore atque cupiditate. Sed voluptatem quas omnis culpa, et odit.
